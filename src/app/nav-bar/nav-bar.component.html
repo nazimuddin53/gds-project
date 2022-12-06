@@ -1,0 +1,35 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sideNav="matSidenav" class="sidenav" 
+        style="overflow: hidden;">
+        <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="sideNav.toggle()"
+        >
+        <mat-icon aria-label="Side nav toggle icon" *ngIf="sideNav.opened">close</mat-icon>
+      </button>
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="#">Link 1</a>
+      <a mat-list-item href="#">Link 2</a>
+      <a mat-list-item href="#">Link 3</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="mat-sidenav-content">
+    <mat-toolbar color="" class="mat-toolbar"  >
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="sideNav.toggle()"
+        >
+        <mat-icon aria-label="Side nav toggle icon"  *ngIf="!sideNav.opened">menu</mat-icon>
+        <mat-icon aria-label="Side nav toggle icon" *ngIf="sideNav.opened">close</mat-icon>
+      </button>
+      <span>Gds-project</span>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <app-admin></app-admin>
+  </mat-sidenav-content>
+</mat-sidenav-container>
